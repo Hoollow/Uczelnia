@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Uczelnia));
             this.ID = new System.Windows.Forms.Label();
             this.TextBoxID = new System.Windows.Forms.TextBox();
             this.TextBoxImie = new System.Windows.Forms.TextBox();
@@ -48,14 +49,14 @@
             this.comboBoxWydzial = new System.Windows.Forms.ComboBox();
             this.Kierunek = new System.Windows.Forms.Label();
             this.comboBoxKierunek = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Szukaj = new System.Windows.Forms.Label();
             this.textBoxSzukaj = new System.Windows.Forms.TextBox();
-            this.pictureBoxExit = new System.Windows.Forms.PictureBox();
             this.Semestr = new System.Windows.Forms.Label();
             this.comboBoxSemestr = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonSzukaj = new System.Windows.Forms.Button();
+            this.Pracownik = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExit)).BeginInit();
             this.SuspendLayout();
             // 
             // ID
@@ -76,6 +77,7 @@
             this.TextBoxID.Name = "TextBoxID";
             this.TextBoxID.Size = new System.Drawing.Size(193, 26);
             this.TextBoxID.TabIndex = 1;
+            this.TextBoxID.TextChanged += new System.EventHandler(this.TextBoxID_TextChanged);
             // 
             // TextBoxImie
             // 
@@ -102,7 +104,7 @@
             this.TextBoxNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.TextBoxNazwisko.Location = new System.Drawing.Point(214, 146);
             this.TextBoxNazwisko.Name = "TextBoxNazwisko";
-            this.TextBoxNazwisko.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TextBoxNazwisko.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TextBoxNazwisko.Size = new System.Drawing.Size(193, 26);
             this.TextBoxNazwisko.TabIndex = 5;
             // 
@@ -291,27 +293,60 @@
             "Rybactwo",
             "Zootechnika",
             "Bioinżynieria Produkcji Żywności",
-            "Zwierzęta w Rekreacji, Edukacji i Terapii"});
+            "Zwierzęta w Rekreacji, Edukacji i Terapii",
+            "Biologia",
+            "Biotechnologia",
+            "Mikrobiologia",
+            "Budownictwo",
+            "Geodezja i kartografia",
+            "Gospodarka Przestrzenna",
+            "Analiza i kreowanie trendów",
+            "Dziedzictwo kulturowe i przyrodnicze",
+            "Dziennikarstwo i komunikacja społeczna",
+            "Filologia",
+            "Filologia Polska",
+            "Filozofia",
+            "Historia",
+            "Logopedia",
+            "Stosunki międzynarodowe",
+            "Wojskoznawstwo",
+            "Leśnictwo",
+            "Rolnictwo",
+            "Ochrona środowiska",
+            "Kierunek Lekarski",
+            "Informatyka",
+            "Matematyka",
+            "Weterynaria",
+            "Ekonomia",
+            "Zarządzanie",
+            "Pedagogika",
+            "Politologia",
+            "Praca socjalna",
+            "Bezpieczeństwo narodowe",
+            "Energetyka",
+            "Inżyniera Bezpieczeństwa",
+            "Mechatronika",
+            "Pielęgniarstwo",
+            "Położnictwo",
+            "Gastronomia",
+            "Towaroznawstwo",
+            "Prawo",
+            "Administracja",
+            "Bezpieczeństwo wewnętrzne",
+            "Edukacja artystyczna w zakresie sztuki muzycznej",
+            "Edukacja artystyczna w zakresie sztuk plastycznych",
+            "Teologia"});
             this.comboBoxKierunek.Location = new System.Drawing.Point(214, 363);
             this.comboBoxKierunek.Name = "comboBoxKierunek";
             this.comboBoxKierunek.Size = new System.Drawing.Size(193, 28);
             this.comboBoxKierunek.TabIndex = 18;
             this.comboBoxKierunek.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(413, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(503, 422);
-            this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // Szukaj
             // 
             this.Szukaj.AutoSize = true;
             this.Szukaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Szukaj.Location = new System.Drawing.Point(522, 76);
+            this.Szukaj.Location = new System.Drawing.Point(447, 76);
             this.Szukaj.Name = "Szukaj";
             this.Szukaj.Size = new System.Drawing.Size(57, 20);
             this.Szukaj.TabIndex = 23;
@@ -321,33 +356,23 @@
             // textBoxSzukaj
             // 
             this.textBoxSzukaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxSzukaj.Location = new System.Drawing.Point(585, 76);
+            this.textBoxSzukaj.Location = new System.Drawing.Point(526, 76);
             this.textBoxSzukaj.Name = "textBoxSzukaj";
             this.textBoxSzukaj.Size = new System.Drawing.Size(296, 26);
             this.textBoxSzukaj.TabIndex = 24;
-            // 
-            // pictureBoxExit
-            // 
-            this.pictureBoxExit.Image = global::Uczelnia.Properties.Resources.icons8_exit_64;
-            this.pictureBoxExit.InitialImage = null;
-            this.pictureBoxExit.Location = new System.Drawing.Point(881, 3);
-            this.pictureBoxExit.Name = "pictureBoxExit";
-            this.pictureBoxExit.Size = new System.Drawing.Size(50, 41);
-            this.pictureBoxExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxExit.TabIndex = 25;
-            this.pictureBoxExit.TabStop = false;
-            this.pictureBoxExit.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.textBoxSzukaj.TextChanged += new System.EventHandler(this.textBoxSzukaj_TextChanged);
             // 
             // Semestr
             // 
             this.Semestr.AutoSize = true;
             this.Semestr.BackColor = System.Drawing.Color.Transparent;
             this.Semestr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Semestr.Location = new System.Drawing.Point(62, 397);
+            this.Semestr.Location = new System.Drawing.Point(59, 397);
             this.Semestr.Name = "Semestr";
             this.Semestr.Size = new System.Drawing.Size(69, 20);
             this.Semestr.TabIndex = 29;
             this.Semestr.Text = "Semestr";
+            this.Semestr.Click += new System.EventHandler(this.Semestr_Click);
             // 
             // comboBoxSemestr
             // 
@@ -366,18 +391,55 @@
             this.comboBoxSemestr.Size = new System.Drawing.Size(193, 28);
             this.comboBoxSemestr.TabIndex = 28;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(427, 114);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(489, 400);
+            this.dataGridView1.TabIndex = 30;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // buttonSzukaj
+            // 
+            this.buttonSzukaj.Location = new System.Drawing.Point(841, 76);
+            this.buttonSzukaj.Name = "buttonSzukaj";
+            this.buttonSzukaj.Size = new System.Drawing.Size(75, 23);
+            this.buttonSzukaj.TabIndex = 31;
+            this.buttonSzukaj.Text = "Szukaj";
+            this.buttonSzukaj.UseVisualStyleBackColor = true;
+            this.buttonSzukaj.Click += new System.EventHandler(this.buttonSzukaj_Click);
+            // 
+            // Pracownik
+            // 
+            this.Pracownik.BackColor = System.Drawing.Color.Coral;
+            this.Pracownik.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Pracownik.Location = new System.Drawing.Point(30, 553);
+            this.Pracownik.Name = "Pracownik";
+            this.Pracownik.Size = new System.Drawing.Size(118, 52);
+            this.Pracownik.TabIndex = 32;
+            this.Pracownik.Text = "Dodaj Pracownika";
+            this.Pracownik.UseVisualStyleBackColor = false;
+            this.Pracownik.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Uczelnia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(943, 633);
+            this.ClientSize = new System.Drawing.Size(950, 629);
+            this.Controls.Add(this.Pracownik);
+            this.Controls.Add(this.buttonSzukaj);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Semestr);
             this.Controls.Add(this.comboBoxSemestr);
-            this.Controls.Add(this.pictureBoxExit);
             this.Controls.Add(this.textBoxSzukaj);
             this.Controls.Add(this.Szukaj);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Kierunek);
             this.Controls.Add(this.comboBoxKierunek);
             this.Controls.Add(this.Wydzial);
@@ -398,11 +460,12 @@
             this.Controls.Add(this.Imie);
             this.Controls.Add(this.TextBoxID);
             this.Controls.Add(this.ID);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Uczelnia";
             this.Text = "Uczelnia";
+            this.Load += new System.EventHandler(this.Uczelnia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,12 +493,13 @@
         private System.Windows.Forms.ComboBox comboBoxWydzial;
         private System.Windows.Forms.Label Kierunek;
         private System.Windows.Forms.ComboBox comboBoxKierunek;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label Szukaj;
         private System.Windows.Forms.TextBox textBoxSzukaj;
-        private System.Windows.Forms.PictureBox pictureBoxExit;
         private System.Windows.Forms.Label Semestr;
         private System.Windows.Forms.ComboBox comboBoxSemestr;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonSzukaj;
+        private System.Windows.Forms.Button Pracownik;
     }
 }
 
